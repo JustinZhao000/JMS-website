@@ -29,7 +29,7 @@ body{
 } 
 /*顶部行样式*/
 .top{
-	position:absolute;
+	position:relative;
 	left:195px;
 	top:2px;
 	width:970px;
@@ -47,39 +47,32 @@ body{
 	height:25px;	
 }
 
-#top_login ul li{
+#top_login>ul>li{
 	float:left;
 	padding:0px 8px;
     height:25px;
-	line-height:25px;
-	
-}
-#top_login_phone{
-	display:inline-block;
-	padding:2px 0px; 
-	margin-top: 5px; 
+	line-height:25px;	
 }
 #top_login>ul>li:first-child{
-	position:relative;
 	padding-right: 0px;
+}
+#top_login>ul>li:first-child>a>img{
+	position:relative;	
 	top:0px;
 	right:0px;
 }
-/*#top_english{
-	border-left:2px solid #ccc;
-}*/
 #top_english>span{
 	display:inline-block;
 	border-left:2px solid #ccc;
 	height:14px;
 	line-height: 14px;
 	position:relative;
-	top:5.5px;
-	padding-left: 10px
+	top:0px;
+	padding-left: 8px;
 }
 #top_login input{
 	width:46px;
-	height:20px;
+	height:23px;
 	background:#72B134;
 	color:white;
 	font-weight:bold;
@@ -87,17 +80,20 @@ body{
 }
 #top_login>ul>li:last-child{
 	
-	color:#FF9900;
-	padding-right:0;
+	/*color:#FF9900;
+	padding-right:0;*/
 }
 #top_login>ul>li:last-child>span{
 	display:inline-block;
 	border-left:2px solid #ccc;
 	position:relative;
-	top:5.5px;
+	top:0px;
 	height:14px;
 	line-height:14px;
-	padding-left: 10px;
+	padding-left: 8px;
+}
+#top_login>ul>li:last-child{
+	padding:0 0 0 8px;
 }
 /*搜索框*/
 #top_search{
@@ -106,13 +102,13 @@ body{
 	right:0;
 	height:27px;
 }
-#top_search input{
-	height:23px;
+#top_search>input{
+	height:27px;
 	width:226px;
 	border:2px solid #ccc;
 	font-size: 14px;
 }
-#top_search a img{
+#top_search>a>img{
 	position:absolute;
 	top:0;
 	right:0;
@@ -122,12 +118,12 @@ body{
 }
 /*导航栏*/
 #navbar{
-	position:absolute;
-	top:90px;
+	position:relative;
+	/*top:90px;*/
 	height:40px;
 	width:100%;
 	background:#002C69;
-	line-height: 40px;
+	line-height:40px;
 }
 #navbar ul{
 	position:absolute;
@@ -135,44 +131,268 @@ body{
 }
 #navbar ul li{
 	float:left;
-	
+	position:relative;
 	
 }
-#navbar ul li a{
+#navbar>ul>li>a{
 	color:white;
 	font-size:15px;
 	padding:10px 35px;
 }
 #navbar ul li a:hover{
-	background:#F39700;;
+	background:#F39700;
+}
+#navbar>ul>li:nth-child(4){
+	background:#F39700;
+}
+#navbar>ul>li:nth-child(4)>span>img{
+	position:absolute;
+	right:15px;
+	top:18px;
+
 }
 /*购物车*/
 #purchase_car{
 	position:absolute;
-	right:195px;
-    height:16px;
-    line-height: 24px;
+	right:185px;
+    height:40px;
+    /*line-height: 40px;*/
     background:#2080BD;
     padding:12px 9px;
    
 }
-#purchase_car a span{
+#purchase_car>a>span{
 	height:0;
 	width:0;
 	border:4px solid white;
 	border-color: white transparent transparent transparent;
-	padding-top: 10px;
+	margin-top: 7px;
 }
 
-#purchase_car a img,span,div{
+#purchase_car>a>img,div{
 	float:left;
 }
-#purchase_car a div{
+#purchase_car>a>div{
 	padding:0px 8px;
 	font-size:15px;
 	color:white;
 	line-height: 15px;
 }
-#purchase_car a span{
-	margin-top: 7px;
+
+/*轮播图*/
+
+.carousel-inner>.item>img{
+	width:1350px;
+	height:502px;
+}
+
+.carousel img{
+	margin:0 auto;
+}
+.carousel-indicators>li.active{
+   background:#FF9900;
+}
+/*tab1*/
+#tab1{
+	position:relative;
+	/*top:660px;*/
+	left:195px;
+	width:970px;
+	height:230px;
+	margin: 30px 0 43px 0;
+}
+.tab1_title{
+	width:970px;
+	height:28px;
+	
+	border-bottom: 2px solid #DDDDDD;
+
+}
+.tab1_title>img{
+	float:left;
+	margin:3px 10px 0 0;
+}
+.tab1_title>span{
+	font-size: 15px;
+}
+.tab1_pic>ul>li{
+	float:left;
+	margin:18px 0px;
+}
+.tab1_pic>ul>li:nth-child(2){
+	padding:0 65px;
+}
+/*tab2*/
+#tab2{
+	position:relative;
+	/*top:891px;*/
+	left:195px;
+	height:227px;
+	width:970px;
+}
+.tab2_title{
+	width:460px;
+	height:28px;
+	border-bottom: 2px solid #DDD;
+}
+.tab2_title>img{
+	float:left;
+	margin:3px 10px 0 0;
+}
+.tab2_title>span{
+	font-size: 15px;
+}
+.tab2_left{
+	width:460px;
+	font-size: 13px;
+	
+}
+.tab2_left_p>p{
+	line-height: 26px;
+}
+.tab2_left_p>p>a{
+	color:#0066CC;
+}
+.tab2_right{	
+	position:absolute;
+	left:508px;
+	top:0;
+	width:460px;
+}
+.tab2_right_content>ul>li{
+	border-bottom: 1px dotted #DDD;
+	font-size: 13px;
+	width:460px;
+	height:32px;
+	line-height: 32px;
+	position:relative;
+}
+.tab2_right_content>ul>li>span:first-child{
+	width:15px;
+	height:32px;
+	overflow:hidden;
+	display:inline-block;
+	position:absolute;
+	top:0px;
+	left:5px;
+}
+.tab2_right_content>ul>li>span:first-child>img{ 
+	position:relative;
+	top:0px;
+	left:-30px;
+
+}
+.tab2_right_content>ul>li>a{
+	position:absolute;
+	left:25px;
+}
+.tab2_right_content>ul>li>span:last-child{
+	position:absolute;
+	left:380px;
+	color:#B0B0B0;
+}
+
+/*footer*/
+#footer{
+	height:200px;
+	width:100%;
+	background:#F1F1F1;
+	position:relative;
+	/*top:1120px;
+	left:0;*/
+}
+#footer>.footer_top{
+	height:135px;
+	width:970px;
+	position:absolute;
+	top:17px;
+	left:195px;
+	border-bottom: 2px solid #DDD;
+}
+.footer_top_list>div{
+	float:left;
+	padding-right: 90px;
+}
+.footer_top_list>div>ul>li{
+	font-size: 12px;
+	margin:12px 0;
+};
+
+.footer_top_2dcode>img{
+	position:absolute;
+	top:17px;
+	right:250px;
+}
+.footer_top_contact{
+	position:absolute;
+	top:0px;
+	right:25px;
+	text-align: center;
+}
+.footer_top_contact>p:first-child{
+	font-size: 24px;
+	font-weight: bold;
+	padding:9px 0 14px 0;
+	margin:0s;
+}
+.footer_top_contact>p:nth-child(2){
+	color:#ADADAD;
+}
+.footer_top_contact>button{
+	height:26px;
+	width:120px;
+	background:#003279;
+	color:white;
+	border:none;
+}
+.footer_bottom{
+	position:absolute;
+	top:165px;
+	left:195px;
+}
+.footer_bottom>p{
+	color:#999;
+	float:left;
+}
+.footer_bottom>p:first-child{
+	padding:0px 28px 0 22px;
+}
+
+/*about.html*/
+#route{
+	position:relative;
+	/*top:130px;*/
+	height:39px;
+	width:100%;
+	background:#F1F1F1;
+	border-top: 2px solid #DDD;
+	border-bottom: 2px solid #DDD;
+	margin-bottom:90px;
+}
+#route>div{
+	position:relative;
+	/*top:14px;*/
+	left:195px;
+	font-size: 15px;
+	line-height: 39px;
+	vertical-align: middle;
+}
+#route>div>img{
+	margin:0 5px 4px 0;
+}
+.about_pic{
+	position:relative;
+	left:250px;
+	margin-bottom: 55px;
+}
+.about_content{
+	width:970px;
+	position:relative;
+	left:222px;
+	height:860px;
+}
+.about_content>p{
+	font-size: 14px;
+	text-indent:2em;
+    line-height: 28px;
 }
