@@ -1,0 +1,178 @@
+@charset "utf-8";
+/*通用基础样式*/
+*{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color:#666;
+}
+a:hover{
+	text-decoration:none;
+	color:#E4393C;
+}
+body{
+	font-size:12px;
+	font-family: "微软雅黑",Arial, Verdana, "宋体";
+	color:#666;
+}
+.lt{
+	float:left;
+}  
+.rt{
+	float:right;
+}
+.clear{
+	clear:both;
+} 
+/*顶部行样式*/
+.top{
+	position:absolute;
+	left:195px;
+	top:2px;
+	width:970px;
+	height:90px;
+}
+#top_logo{
+	position:absolute;
+	top:17px;
+	left:0;
+}
+#top_login{
+	position:absolute;
+	top:2px;
+	right:0;
+	height:25px;	
+}
+
+#top_login ul li{
+	float:left;
+	padding:0px 8px;
+    height:25px;
+	line-height:25px;
+	
+}
+#top_login_phone{
+	display:inline-block;
+	padding:2px 0px; 
+	margin-top: 5px; 
+}
+#top_login>ul>li:first-child{
+	position:relative;
+	padding-right: 0px;
+	top:0px;
+	right:0px;
+}
+/*#top_english{
+	border-left:2px solid #ccc;
+}*/
+#top_english>span{
+	display:inline-block;
+	border-left:2px solid #ccc;
+	height:14px;
+	line-height: 14px;
+	position:relative;
+	top:5.5px;
+	padding-left: 10px
+}
+#top_login input{
+	width:46px;
+	height:20px;
+	background:#72B134;
+	color:white;
+	font-weight:bold;
+	border-radius:5px;
+}
+#top_login>ul>li:last-child{
+	
+	color:#FF9900;
+	padding-right:0;
+}
+#top_login>ul>li:last-child>span{
+	display:inline-block;
+	border-left:2px solid #ccc;
+	position:relative;
+	top:5.5px;
+	height:14px;
+	line-height:14px;
+	padding-left: 10px;
+}
+/*搜索框*/
+#top_search{
+	position:absolute;
+	top:44px;
+	right:0;
+	height:27px;
+}
+#top_search input{
+	height:23px;
+	width:226px;
+	border:2px solid #ccc;
+	font-size: 14px;
+}
+#top_search a img{
+	position:absolute;
+	top:0;
+	right:0;
+	padding:2.8px 2px;
+	border:2px solid #ccc;
+	
+}
+/*导航栏*/
+#navbar{
+	position:absolute;
+	top:90px;
+	height:40px;
+	width:100%;
+	background:#002C69;
+	line-height: 40px;
+}
+#navbar ul{
+	position:absolute;
+	left:195px;
+}
+#navbar ul li{
+	float:left;
+	
+	
+}
+#navbar ul li a{
+	color:white;
+	font-size:15px;
+	padding:10px 35px;
+}
+#navbar ul li a:hover{
+	background:#F39700;;
+}
+/*购物车*/
+#purchase_car{
+	position:absolute;
+	right:195px;
+    height:16px;
+    line-height: 24px;
+    background:#2080BD;
+    padding:12px 9px;
+   
+}
+#purchase_car a span{
+	height:0;
+	width:0;
+	border:4px solid white;
+	border-color: white transparent transparent transparent;
+	padding-top: 10px;
+}
+
+#purchase_car a img,span,div{
+	float:left;
+}
+#purchase_car a div{
+	padding:0px 8px;
+	font-size:15px;
+	color:white;
+	line-height: 15px;
+}
+#purchase_car a span{
+	margin-top: 7px;
+}
