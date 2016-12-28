@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no">
 <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="js/formValidator4.0.1/style/validator.css">
 </head>
 <body>
 
@@ -82,24 +83,25 @@
   </div>
   <div id="login_panel">
     <div class="login_info">
+    <form action="get" id="form_login">
     <div class="login_title">
       <span>用户登陆</span>
     </div>
     <div class="user">
-      <p>用户名:</p>
-      <span></span>
+      <p>用户名:</p>     
       <div class="user_input">
         <img src="images/icon/login_01.png" alt="">
-        <input type="text">
+        <input type="text" id="user_name" name="user_name">
       </div>
+      <span id="user_nameTip"></span>
     </div>
      <div class="user">
-      <p>密码:</p>
-      <span></span>
+      <p>密码:</p>     
       <div class="user_input">
         <img src="images/icon/login_02.png" alt="">
-        <input type="text">
+        <input type="password" id="user_pwd" name="user_pwd">
       </div>
+      <span id="user_pwdTip"></span>
     </div>
 
     <div class="auto_login">
@@ -108,7 +110,7 @@
     <div class="login_button">
        <input type="button" value="立即登陆" id="login_button">
     </div>
-   
+   </form>
     </div>
   </div>
 
@@ -164,9 +166,44 @@
 </div>
 
 <script src="js/jquery.min.js"></script>
-
+<script type="text/javascript" src="js/formValidator4.0.1/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/formValidator4.0.1/formValidator-4.0.1.min.js"></script>
+<script type="text/javascript" src="js/formValidator4.0.1/formValidatorRegex.js"></script>
 <script type="text/javascript">
-   
+   $(document).ready(function(){
+      $.formValidator.initConfig();
+
+      $('#user_name').formValidator({
+        
+        onShow:"请输入用户名",
+        onFocus:"用户名由3到12位字母或数字组成",
+        onEmpty:"用户名称不能为空",
+        onCorrect:"通过"
+      }).inputValidator({
+        type:"size",
+        min:3,
+        max:12,
+        onError:"用户名位数不正确"
+      });
+
+      $('#user_pwd').formValidator({
+        
+        onShow:"请输入密码",
+        onFocus:"密码由6到18位字母或数字组成",
+        onEmpty:"密码不能为空",
+        onCorrect:"通过"
+      }).inputValidator({
+        type:"size",
+        min:6,
+        max:18,
+        onError:"密码格式不正确，请重新输入"
+
+      });
+
+     $('#login_button').submit(function(){
+        return $.formValidator.PageIsValid("1");
+     })
+   });
 </script>
 </body>
 </html>

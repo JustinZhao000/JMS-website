@@ -76,34 +76,26 @@
      </a>
     </div>
  </div>
- 
-<div class="carousel slide" id="myCarousel">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-  <div class="carousel-inner">
-  <div class="item active">
-    <img src="images/lunbo/banner_01.jpg" alt="第一张">
-  </div>
-  <div class="item">
-    <img src="images/lunbo/banner_02.jpg" alt="第二张">
-  </div>
-  <div class="item">
+ <!-- 焦点轮播图 -->
+<div id="container"> 
+  <div id="img_list"> 
+    <img src="images/lunbo/banner_04.jpg" alt="第四张"> 
+    <img src="images/lunbo/banner_01.jpg" alt="第一张">  
+    <img src="images/lunbo/banner_02.jpg" alt="第二张">  
     <img src="images/lunbo/banner_03.jpg" alt="第三张">
-  </div>
-  <div class="item">
     <img src="images/lunbo/banner_04.jpg" alt="第四张">
+    <img src="images/lunbo/banner_01.jpg" alt="第一张">  
   </div>
+  <div id="button">
+    <span index="1"></span>
+    <span index="2"></span>
+    <span index="3"></span>
+    <span index="4"></span>
   </div>
-  <a href="#myCarousel" data-slide="prev" class="carousel-control left">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a href="#myCarousel" data-slide="next" class="carousel-control right">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+  <div id="arrow">
+    <a href="javascript:" id="pre" class="arrow">&glt;</a>
+    <a href="javascript:" id="next" class="arrow">&grt;</a>
+  </div>
 </div> 
 
 <!-- tab1 -->
@@ -226,9 +218,16 @@
 </div>
 
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+
 <script type="text/javascript">
- 
+   window.onload=function(){
+    var container=document.getElementById("container");
+    var list=document.getElementById("list");
+    var button=document.getElementById("button").getElementsByTagName("span");
+    var pre=document.getElementById("pre");
+    var next=document.getElementById("next");
+    
+       }
 </script>
 </body>
 </html>
