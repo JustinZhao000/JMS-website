@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no"> -->
 <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="js/formValidator4.0.1/style/validator.css">
+
 </head>
 <body>
 
@@ -63,7 +63,7 @@
   <!-- 导航栏 -->
   <div id="navbar">   
     <ul> 
-      <li><a href="index.html" style="background:#F39700;">首页</a></li>
+      <li><a href="index.html">首页</a></li>
       <li><a href="about.html">关于净美仕</a></li>
       <li><a href="case.html">公司动态</a></li>
       <li><a href="product.html">产品信息</a><span><img src="images/icon/index_01_03.png" alt=""></span></li>
@@ -77,8 +77,8 @@
      </a>
     </div>
  </div>
- 
-  <div id="background_img">
+
+ <div id="background_img">
     <img src="images/lunbo/login_bg.jpg" alt="">
   </div>
   <div id="login_panel">
@@ -113,7 +113,6 @@
    </form>
     </div>
   </div>
-
 <div id="footer">
   <div class="footer_top">
     <div class="footer_top_list">
@@ -165,45 +164,10 @@
   </div>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/formValidator4.0.1/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="js/formValidator4.0.1/formValidator-4.0.1.min.js"></script>
-<script type="text/javascript" src="js/formValidator4.0.1/formValidatorRegex.js"></script>
+<!-- <script src="js/jquery.min.js"></script> -->
 <script type="text/javascript">
-   $(document).ready(function(){
-      $.formValidator.initConfig();
-
-      $('#user_name').formValidator({
-        
-        onShow:"请输入用户名",
-        onFocus:"用户名由3到12位字母或数字组成",
-        onEmpty:"用户名称不能为空",
-        onCorrect:"通过"
-      }).inputValidator({
-        type:"size",
-        min:3,
-        max:12,
-        onError:"用户名位数不正确"
-      });
-
-      $('#user_pwd').formValidator({
-        
-        onShow:"请输入密码",
-        onFocus:"密码由6到18位字母或数字组成",
-        onEmpty:"密码不能为空",
-        onCorrect:"通过"
-      }).inputValidator({
-        type:"size",
-        min:6,
-        max:18,
-        onError:"密码格式不正确，请重新输入"
-
-      });
-
-     $('#login_button').submit(function(){
-        return $.formValidator.PageIsValid("1");
-     })
-   });
+  
 </script>
+
 </body>
 </html>

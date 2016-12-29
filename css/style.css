@@ -187,20 +187,76 @@ body{
 	color:white;
 	line-height: 15px;
 }
-
+/*index.html*/
 /*轮播图*/
-
-.carousel-inner>.item>img{
-	width:1350px;
-	height:502px;
+#container{
+	width:1349px;
+	height:500px;
+	position:relative;
+	overflow:hidden;
+	border-bottom:1px solid #DDD;
+}
+#list{
+    width:11520PX;
+	height:500px;
+	position:absolute;
+	z-index: 1;
+   
+}
+#list>img{
+	height:500px;
+	float:left;
+}
+#button{
+	position:absolute;
+	height:13px;
+	width:100px;
+	left:636px;
+	bottom:10px;
+	z-index: 2;
+}
+#button>span{
+	cursor:pointer;
+	float:left;
+	border:1px solid #fff;
+	width:13px;
+	height:13px;
+	border-radius: 50%;
+	background:#CCC;
+	margin-right: 10px;
+}
+#button .on{
+	background: #FF9900;
 }
 
-.carousel img{
-	margin:0 auto;
+.arrow{
+	cursor:pointer;
+	display:none;
+	line-height: 75px;
+	text-align: center;
+	font-size: 36px;
+	font-weight:bold;
+	width:43px;
+	height:75px;
+	position: absolute; 
+	z-index: 2; 
+	top: 187px; 
+	background-color: RGBA(0,0,0,.3); 
+	color: #D1C9C6;
 }
-.carousel-indicators>li.active{
-   background:#FF9900;
+.arrow:hover { 
+	background-color: RGBA(0,0,0,.7);
 }
+#container:hover .arrow{
+	display:block;
+}
+#pre{
+	left:195px;
+}
+#next{
+	right:195px;
+}
+
 /*tab1*/
 #tab1{
 	position:relative;
@@ -342,7 +398,7 @@ body{
 	font-size: 24px;
 	font-weight: bold;
 	padding:9px 0 14px 0;
-	margin:0s;
+	margin:0;
 }
 .footer_top_contact>p:nth-child(2){
 	color:#ADADAD;
@@ -390,17 +446,20 @@ body{
 #route>div>img{
 	margin:0 5px 4px 0;
 	vertical-align: middle;
+
 }
-.about_pic{
+.about_pic>img{
 	position:relative;
 	left:250px;
-	margin: 90px 0 55px 0;
+	margin:90px 0px 55px 0px;	
+	width:970px;
 }
 .about_content{
 	width:970px;
 	position:relative;
 	left:222px;
 	height:860px;
+	margin-right: 0 !important;
 }
 .about_content>p{
 	font-size: 14px;

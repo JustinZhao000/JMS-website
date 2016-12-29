@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no"> -->
 <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
@@ -78,7 +79,7 @@
  </div>
  <!-- 焦点轮播图 -->
 <div id="container"> 
-  <div id="img_list"> 
+  <div id="list" style="left:-2100px;"> 
     <img src="images/lunbo/banner_04.jpg" alt="第四张"> 
     <img src="images/lunbo/banner_01.jpg" alt="第一张">  
     <img src="images/lunbo/banner_02.jpg" alt="第二张">  
@@ -87,15 +88,15 @@
     <img src="images/lunbo/banner_01.jpg" alt="第一张">  
   </div>
   <div id="button">
-    <span index="1"></span>
+    <span index="1" class="on"></span>
     <span index="2"></span>
     <span index="3"></span>
     <span index="4"></span>
   </div>
-  <div id="arrow">
-    <a href="javascript:" id="pre" class="arrow">&glt;</a>
-    <a href="javascript:" id="next" class="arrow">&grt;</a>
-  </div>
+ 
+    <a href="javascript:;" id="pre" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+  
 </div> 
 
 <!-- tab1 -->
@@ -217,8 +218,7 @@
   </div>
 </div>
 
-<script src="js/jquery.min.js"></script>
-
+<!-- <script src="js/jquery.min.js"></script> -->
 <script type="text/javascript">
    window.onload=function(){
     var container=document.getElementById("container");
@@ -226,8 +226,102 @@
     var button=document.getElementById("button").getElementsByTagName("span");
     var pre=document.getElementById("pre");
     var next=document.getElementById("next");
+    var index=1;
+    var animated=false;
+    var interval=3000;
     
-       }
+
+    function animation(offset){
+      if(offset==0){
+        return;
+      }
+      animated=true;
+      var newLeft=parseInt(list.style.left)+offset;     
+      // debugger;
+      var time=300;//位移总时间
+      var inteval=10;//位移间隔时间
+      var speed=offset/(time/inteval);//
+      var timer;
+
+      var go=function(){
+      if((speed>0&&parseInt(list.style.left)<newLeft)||(speed<0&&parseInt(list.style.left)>newLeft)){
+        list.style.left=parseInt(list.style.left)+speed+"px";
+          setTimeout(go,inteval);         
+      }else{
+        animated=false;
+        list.style.left=newLeft+'px';
+        if(newLeft>-180){
+        list.style.left=-9780+"px";
+      }
+      if(newLeft<-9780){
+        list.style.left=-180+"px";
+      }
+      }
+    }
+    go(); 
+  }
+  function play(){
+    timer=setTimeout(function(){  
+      next.onclick();
+      play();
+    },interval);
+  }
+  function stop(){
+    clearTimeout(timer);
+  }
+    next.onclick=function(){
+      if(animated){
+        return;
+      }
+         
+      
+      if(index==5){
+        index=1;
+      }else{
+        index+=1;   
+      }
+      showButton();
+      if(!animated){
+      animation(-1920);
+    }
+    }
+    pre.onclick=function(){    
+      index-=1;     
+      if(index==0){
+        index=4;
+      }
+      showButton();
+      if(!animated){
+      animation(1920);
+    }
+   }
+    function showButton(){
+      for(var i=0;i<button.length;i++){
+        if(button[i].className=="on"){
+          button[i].className="";
+          break;//退出循环
+        }
+      }
+      button[index-1].className="on";
+    }
+   // 点击按钮切换效果
+   for(var i=0;i<button.length;i++){
+    button[i].onclick=function(){
+      if(this.className=="on"){
+        return;
+      }
+     var myIndex=parseInt(this.getAttribute('index'));
+     var offset=-1920*(myIndex-index);
+     animation(offset);
+     index=myIndex;
+     showButton();
+   }
+ }
+ container.onmouseover=stop;
+ container.onmouseout=play;
+ play();
+ }
 </script>
+
 </body>
 </html>
