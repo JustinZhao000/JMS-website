@@ -429,11 +429,10 @@ body{
 	position:relative;
 	/*top:130px;*/
 	height:39px;
-	width:100%;
+	/*/
 	background:#F1F1F1;
 	border-top: 2px solid #DDD;
-	border-bottom: 2px solid #DDD;
-	
+	border-bottom: 2px solid #DDD;	
 }
 #route>div{
 	position:relative;
@@ -455,8 +454,8 @@ body{
 	width:970px;
 }
 .about_content{
-	width:970px;
 	position:relative;
+	width:970px;	
 	left:222px;
 	height:860px;
 	margin-right: 0 !important;
