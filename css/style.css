@@ -71,13 +71,18 @@ body{
 	top:0px;
 	padding-left: 8px;
 }
-#top_login input{
+#top_login>ul>li:nth-child(7)>div{
+	/*display:inline-block;*/
 	width:46px;
 	height:24px;
 	background:#72B134;
+	
+	border-radius:5px;
+	text-align: center;
+}
+#top_login>ul>li:nth-child(7)>div>a{
 	color:white;
 	font-weight:bold;
-	border-radius:5px;
 }
 #top_login>ul>li:last-child{
 	
